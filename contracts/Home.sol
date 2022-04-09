@@ -1,15 +1,10 @@
-# BaoWao
- DAO's Best Friend. 
+// SPDX-License-Identifier: GPL-3.0
 
+pragma solidity ^0.8.0;
 
-A modular approach to creating DAOs 
+contract Home {
 
-
-
-HOME Contract
-central contract to tie together all other contracts. 
-
-
+// This will be the base contract for the DAO 
 
 // This will need to orchestrate all other contracts and work through those contracts 
 
@@ -19,7 +14,7 @@ central contract to tie together all other contracts.
 
 // 2. Submit proposals to be voted on by the DAO, Vote on the proposal, Accept prop, reject prop. 
 
-// 3. Treasury - AddAdd to treasury, whatever it is where you bomb yourself or whatever, withdraw from treasury 
+// 3. Treasury - Add to treasury, whatever it is where you bomb yourself or whatever, withdraw from treasury 
 
 // 4. Work(bounties) - submit a work-order, contribute to work-order, delete work-order, accept workorder, reject workorder (partial pay)  
 
@@ -27,18 +22,8 @@ central contract to tie together all other contracts.
 
 
 
-// INTERFACE Contracts 
-https://solidity-by-example.org/interface/
-
-Proposals
-
-Governance 
-
-Member NFT Minting Contract
-
-SuperFluid module
 
 
 
 
-
+}

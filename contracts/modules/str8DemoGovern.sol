@@ -2,7 +2,10 @@
 
 pragma solidity ^0.8.0;
 
-contract str8DemoGovern is IGovern {
+
+
+//probably going to need to import the voting interface in the proposal contract. 
+contract str8DemoGovern is IVote {
 
 //This contract will be more difficult to execute since I will need to be able to hash out how the organization hierarchy is defined. 
 // This will be a 1 vote per wallet contract. 

@@ -42,57 +42,48 @@ struct bounty {
 
 // functions
 
-function createBounty() {
-    // create bounty 
-    // reward, necessary work scope(ipfs?), due date, bounty status
-}
-
-function dibsOnBounty() {
-    // dibs on bounty 
-    // bounty id, dibs amount, dibs date, msg.sender
-} 
-
-function assignBounty() {
-    // assign bounty 
+function assignBounty()   public ;
+    // assign bounty  
     // bounty id, bounty assignee
 }
 
 
-function claimBounty() {
-    // claim bounty 
-    // bounty id, msg.sender    
-}
-
-//
-function acceptBounty() {
+function acceptBounty()  public {
     // accept bounty 
     // bounty id, msg.sender
 }
 
-function rejectBounty() {
-    // reject bounty 
+function rejectBounty()  public {
+    // reject bounty work
     // bounty id, msg.sender,
-
 }
 
-function parRejectBounty() {
-    // reject bounty 
+
+function parRejectBounty()  public {
+    // reject bounty work
     // bounty id, credit, msg.sender
-
 }
 
-function cancelBounty() {  
+
+function cancelBounty() public {  
     // cancel bounty 
     // bounty id, msg.sender = creator, bounty status needs to be unclaimed. 
 }
 
-function updateBounty() {
+function updateBounty() public payable {
     // update bounty 
     // bounty id, new ipfs hash, new reward. 
 }
 
-function addReward() {
-    // add reward 
-    // bounty id, amount
+function addReward() public payable  {
 
+
+    // add reward - for teams with a mutual interest in the work order.
+    // bounty id, amount
+}
+
+
+function claimBounty()  public {
+    // claim bounty 
+   // bounty id, msg.sender    
 }

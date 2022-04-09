@@ -13,6 +13,7 @@ contract DAOCurrency is IERC20, IBounty {
 // events
 
 
+
  /**
      * @dev Emitted when `value` tokens are moved from one account (`from`) to
      * another (`to`).

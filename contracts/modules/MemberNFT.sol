@@ -21,7 +21,7 @@ contract memberNFT is IERC721, IERC165 {
 
 
     struct Member{
-        bool memberStatus; 
+        bool memberStatus;
         uint256 memberId;
         address memberAddress;
     }
@@ -33,9 +33,9 @@ contract memberNFT is IERC721, IERC165 {
 
 // Constructor
 
-    constructor(address orgAddress, uint membershipCost) {
-        DAO = orgAddress;
-        shipCost = membershipCost; // not a constant so that this can be modified, again only by DAO 
+    constructor(address _orgAddress, uint _membershipCost) {
+        DAO = _orgAddress;
+        shipCost = _membershipCost; // not a constant so that this can be modified, again only by DAO 
     }
 
 

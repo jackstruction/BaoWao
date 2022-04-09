@@ -10,6 +10,8 @@ contract str8DemoGovern is IGovern {
 
 //variables
 
+// need to tier this bullshit up.
+
 struct VoteList {
     uint voteId;
     uint voteType;
@@ -19,6 +21,7 @@ struct VoteList {
         Pending
     };
 }
+
 
 
 // events 
@@ -37,7 +40,13 @@ event voteResults(address indexed voter, uint256 indexed voteId, uint256 indexed
     // to govern we will need votes as well as a way to define how votes can be cast or who they can be cast by.
     // one of the module contracts will need to be a technocratic type of setup with specializations and some form of fluid/dynamic leadership , whereas one of them will give each member a single vote.  
 
-    function vote(enum vote) public returns(bool); 
+    function vote(enum vote) public returns(bool){
+        
+        
+        
+        return true;
+    }
+ 
 
 
     // this function will be how to create a new vote.

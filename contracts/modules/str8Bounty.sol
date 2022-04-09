@@ -36,6 +36,7 @@ struct bounty {
 
 
 
+
 // interface (IBounty) functions
 
 

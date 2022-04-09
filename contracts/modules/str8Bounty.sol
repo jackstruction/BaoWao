@@ -42,24 +42,24 @@ struct bounty {
 
 // functions
 
-function assignBounty()   public ;
+function assignBounty() public ;
     // assign bounty  
     // bounty id, bounty assignee
 }
 
 
-function acceptBounty()  public {
+function acceptBounty() public {
     // accept bounty 
     // bounty id, msg.sender
 }
 
-function rejectBounty()  public {
+function rejectBounty() public {
     // reject bounty work
     // bounty id, msg.sender,
 }
 
 
-function parRejectBounty()  public {
+function parRejectBounty() public {
     // reject bounty work
     // bounty id, credit, msg.sender
 }
@@ -82,8 +82,7 @@ function addReward() public payable  {
     // bounty id, amount
 }
 
-
-function claimBounty()  public {
+function claimBounty() public {
     // claim bounty 
    // bounty id, msg.sender    
 }

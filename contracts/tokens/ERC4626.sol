@@ -3,7 +3,7 @@ pragma solidity >=0.8.0;
 
 // I stole this from solmate to give credit where it's due. Definitely need to figure out how to correctly pull that shit from solmate so it can be correct. 
 
-import {ERC20} from "../tokens/ERC20.sol";
+import {ERC20} from "/ERC20.sol";
 import {SafeTransferLib} from "../utils/SafeTransferLib.sol";
 import {FixedPointMathLib} from "../utils/FixedPointMathLib.sol";
 

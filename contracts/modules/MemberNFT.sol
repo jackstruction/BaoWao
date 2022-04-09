@@ -13,7 +13,7 @@ contract memberNFT is IMember, IERC721, IERC165, RoleHandler {
 
 /* This contract will allow members to mint memberShips, they will only be able to mint and burn, yes it's a shitty erc-721 contract but it's a proof of concept */
 
-    address constant zeroAdd = 0x0000000000000000000000000000000000000000;
+    address constant ZEROADDRESS = 0x0000000000000000000000000000000000000000;
     address immutable DAO;
 
     // Variables 
@@ -220,7 +220,7 @@ contract memberNFT is IMember, IERC721, IERC165, RoleHandler {
     function burn(uint256 tokenId) external {
 
         // this is the only way to burn NFTs.
-        transferFrom(msg.sender, zeroAdd, uint tokenId);
+        transferFrom(msg.sender, ZEROADDRESS, uint tokenId);
         memberCount--;
       
     }   
@@ -230,7 +230,7 @@ contract memberNFT is IMember, IERC721, IERC165, RoleHandler {
         // this is the only way to burn NFTs.
         require(msg.sender == DAO);
         memberCount--;
-        transferFrom(memberAdd, zeroAdd, uint tokenId);
+        transferFrom(memberAdd, ZEROADDRESS, uint tokenId);
         // count down to account for member change
     }
 

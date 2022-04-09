@@ -11,9 +11,6 @@ contract DAOCurrency is IERC20, IBounty {
 
 
 // events
-
-
-
  /**
      * @dev Emitted when `value` tokens are moved from one account (`from`) to
      * another (`to`).
@@ -28,6 +25,8 @@ contract DAOCurrency is IERC20, IBounty {
      */
     event Approval(address indexed owner, address indexed spender, uint256 value);
 
+
+//  functions
     /**
      * @dev Returns the amount of tokens in existence.
      */

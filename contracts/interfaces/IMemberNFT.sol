@@ -2,11 +2,11 @@
 
 pragma solidity ^0.8.0;
 
-import "../tokens/IERC721.sol";
+import "../tokens/IERC721.sol"; 
 
 interface IMember is IERC721 {
 
-
+function 
 
 // this interface will handle the Membership NFT functionality
 
@@ -15,6 +15,7 @@ interface IMember is IERC721 {
 // Mint function
 
 // transfer function
+
 
 // validate member function
 

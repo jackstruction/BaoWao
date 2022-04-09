@@ -2,11 +2,11 @@
 
 pragma solidity ^0.8.0;
 
-import "../../utils/introspection/IERC165.sol";
+import "../utils/IERC165.sol";
+import "../tokens/IERC721.sol"; 
 
 
-
-contract memberNFT is IERC721, IERC165 {
+contract memberNFT is IMember, IERC721, IERC165 {
 // OpenZeppelin Contracts v4.4.1 (token/ERC721/IERC721.sol)
 
 ////////////////////////////////////////////////////////////////////////////////

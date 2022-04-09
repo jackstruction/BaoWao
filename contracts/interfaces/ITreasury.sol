@@ -7,26 +7,28 @@ interface ITreasury {
 
 // Treasury - Add to treasury, whatever it is where you bomb yourself or whatever, withdraw from treasury  
 
-// events 
-    event TreasuryAdded(address indexed treasury, uint256 amount);
-    event TreasuryWithdrawn(address indexed treasury, uint256 amount);
+// events
+    event TreasuryDeposit(address indexed treasury, uint256 amount);
+    event TreasuryWithdrawal(address indexed treasury, uint256 amount);
     event TreasurySpent(address indexed treasury, uint256 amount);
-
 
     // user functions 
 
-    function addToTreasury(uint256 _amount) external;
-    function withdrawFromTreasury(uint256 _amount) external;
+    function deposit(uint256 _amount) public payable;
+
+    function withdraw(uint256 _amount) external;
 
     // view functions 
 
-    function getTreasuryBalance() external view returns (uint256);
+    function getTreasuryBalance() public view returns (uint256);
+
+    function getUserBalance(address _user) public view returns (uint256);
 
     // DAO/Admin functions
-
-    function useTreasuryFunds(uint256 _amount) external;
-
-    function useTreasuryFundsForBounty(uint256 _amount) external;
+    // use treasury funds for non-bounty expenses
+    function useTreasury(uint256 _amount) public returns(bool);
+    // use treasury funds for a bounty 
+    function useTreasury4Bounty(uint256 _amount, uint bountyId) public returns(bool);
     
     
 

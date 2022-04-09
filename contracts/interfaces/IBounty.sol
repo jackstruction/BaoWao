@@ -4,8 +4,6 @@ pragma solidity ^0.8.0;
 interface IBounty ;
 
 
-
-
     // events 
     // creator events
     event bountyCreated(address indexed creator, uint bountyId, uint bountyStatus, uint bountyReward, uint bountyWorkOrder);
@@ -18,57 +16,53 @@ interface IBounty ;
 
 
 // Claim the task as yours and start working to complete it, possibly allow multiple members to work on the task. possibly pair up, but I want to keep this general
-function claimBounty()  public ;
+
+
+// Worker fuctions 
+
+function claimBounty() public returns(bool);
     // claim bounty 
     // bounty id, msg.sender    
 
-function CollectBounty(uint bountyId) ;
+function submitBounty(uint bountyId) public returns(bool);
+    // submit the work order 
+    // bounty id, msg.sender
+
+function CollectBounty(uint bountyId) public returns(bool);
     // collect the reward  
     // bounty id, msg.sender
-    //
 
-function createBounty(uint bountyId, uint bountyStatus, uint bountyReward) public payable returns(bool);
+//Creator functions 
+
+function createBounty(uint bountyStatus, uint bountyReward) public payable returns(uint bountyId);
     // create bounty 
     // reward, necessary work scope(ipfs?), due date, bounty status
     // made this payable but I think I need to put the reward somewhere else like a separate reward treasury.
 
 
- 
-// assign the bounty to a specific user, when a task is just too important to be up for grabs.  
-function assignBounty() public;
-    // assign bounty 
-    // bounty id, bounty assignee
-    // 
-
-
-function acceptBounty()  public  ;
+function acceptBounty() public returns(bool);
     // accept bounty 
     // bounty id, msg.sender
 
 
-function rejectBounty()  public ;
+function rejectBounty() public returns(bool);
     // reject bounty 
-    // bounty id, msg.sender,
+    // bounty id, msg.sender, rejection reason
 
 
-
-function parRejectBounty() public ;
-    // reject bounty 
-    // bounty id, credit, msg.sender
-
-
-
-function cancelBounty() public  ;  
+function cancelBounty(uint bountyId) public  returns(bool);  
     // cancel bounty 
     // bounty id, msg.sender = creator, bounty status needs to be unclaimed. 
 
 
-function updateBounty(uint bountyId, bytes32 ipfsHash) public payable ;
+function updateBounty(uint bountyId, bytes32 ipfsHash) public payable returns(bool);
     // update bounty 
     // bounty id, new ipfs hash, new reward. 
 
 
-function addReward(uint bountyId, uint rewardAmount) public payable returns() ;
+// Third-party functions
+
+function addReward(uint bountyId, uint rewardAmount) public payable returns(bool);
     // add reward 
     // bounty id, amount
     

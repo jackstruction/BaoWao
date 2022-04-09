@@ -4,16 +4,17 @@ pragma solidity ^0.8.0;
 
 import "../utils/IERC165.sol";
 import "../tokens/IERC721.sol"; 
+import "../utils/RoleHandler.sol";
 
 
-contract memberNFT is IMember, IERC721, IERC165 {
+
+contract memberNFT is IMember, IERC721, IERC165, RoleHandler {
 // OpenZeppelin Contracts v4.4.1 (token/ERC721/IERC721.sol)
 
-////////////////////////////////////////////////////////////////////////////////
 /* This contract will allow members to mint memberShips, they will only be able to mint and burn, yes it's a shitty erc-721 contract but it's a proof of concept */
-////////////////////////////////////////////////////////////////////////////////
 
-
+    address constant zeroAdd = 0x0000000000000000000000000000000000000000;
+    address immutable DAO;
 
     // Variables 
     uint memberCount;
@@ -26,9 +27,6 @@ contract memberNFT is IMember, IERC721, IERC165 {
         address memberAddress;
     }
 
-
-    address constant zeroAdd = 0x0000000000000000000000000000000000000000;
-    address immutable DAO;
 
     mapping (address => Member) members;
 
@@ -223,13 +221,14 @@ contract memberNFT is IMember, IERC721, IERC165 {
 
         // this is the only way to burn NFTs.
         transferFrom(msg.sender, zeroAdd, uint tokenId);
-        memberCount--
-        // transfer from msg.sender maybe need a function to burn the nft from the DAO's address(removing members,forget what that is called, somethign like suicide or flame out...it's ragequit )
+        memberCount--;
+      
     }   
 
     function daoBurn(address memberAdd, uint256 tokenID) external {
         //this will be performed by the DAO contract, so the DAO address should probably be established during construction. 
         // this is the only way to burn NFTs.
+        require(msg.sender == DAO);
         memberCount--;
         transferFrom(memberAdd, zeroAdd, uint tokenId);
         // count down to account for member change

@@ -1,7 +1,7 @@
 
 pragma solidity ^0.8.0;
 
-interface IBounty ;
+interface IBounty {
 
 
     // events 
@@ -15,7 +15,27 @@ interface IBounty ;
     event workCompleted(address indexed worker, uint bountyId, uint bountyStatus, uint bountyReward, uint bountyWorkOrder);
 
 
-// Claim the task as yours and start working to complete it, possibly allow multiple members to work on the task. possibly pair up, but I want to keep this general
+
+//Creator functions 
+
+function createBounty(uint bountyStatus, uint bountyReward) public payable returns(uint bountyId);
+    // create bounty 
+    // reward, necessary work scope(ipfs?), due date, bounty status
+    // made this payable but I think I need to put the reward somewhere else like a separate reward treasury.
+    
+function acceptBounty() public returns(bool);
+    // accept bounty 
+    // bounty id, msg.sender
+
+
+function rejectBounty() public returns(bool);
+    // reject bounty 
+    // bounty id, msg.sender, rejection reason
+
+
+function cancelBounty(uint bountyId) public  returns(bool);  
+    // cancel bounty 
+    // bounty id, msg.sender = creator, bounty status needs to be unclaimed. 
 
 
 // Worker fuctions 
@@ -32,48 +52,4 @@ function CollectBounty(uint bountyId) public returns(bool);
     // collect the reward  
     // bounty id, msg.sender
 
-//Creator functions 
-
-function createBounty(uint bountyStatus, uint bountyReward) public payable returns(uint bountyId);
-    // create bounty 
-    // reward, necessary work scope(ipfs?), due date, bounty status
-    // made this payable but I think I need to put the reward somewhere else like a separate reward treasury.
-
-
-function acceptBounty() public returns(bool);
-    // accept bounty 
-    // bounty id, msg.sender
-
-
-function rejectBounty() public returns(bool);
-    // reject bounty 
-    // bounty id, msg.sender, rejection reason
-
-
-function cancelBounty(uint bountyId) public  returns(bool);  
-    // cancel bounty 
-    // bounty id, msg.sender = creator, bounty status needs to be unclaimed. 
-
-
-function updateBounty(uint bountyId, bytes32 ipfsHash) public payable returns(bool);
-    // update bounty 
-    // bounty id, new ipfs hash, new reward. 
-
-
-// Third-party functions
-
-function addReward(uint bountyId, uint rewardAmount) public payable returns(bool);
-    // add reward 
-    // bounty id, amount
-    
-
-
-
-
-// 4. Work(bounties) - submit a work-order, contribute to work-order,
-// delete work-order, accept workorder, reject workorder (partial pay)  reject order (no reward)
-
-
-    
-
-
+}

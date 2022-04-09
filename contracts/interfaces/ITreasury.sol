@@ -13,7 +13,7 @@ interface ITreasury {
     event TreasurySpent(address indexed treasury, uint256 amount);
 
     // user functions 
-
+    // deposit into treasury
     function deposit(uint256 _amount) public payable;
 
     function withdraw(uint256 _amount) external;
@@ -30,7 +30,5 @@ interface ITreasury {
     // use treasury funds for a bounty 
     function useTreasury4Bounty(uint256 _amount, uint bountyId) public returns(bool);
     
-    
-
 }
 

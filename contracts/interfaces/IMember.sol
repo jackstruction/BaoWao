@@ -9,6 +9,8 @@ function joinDAO() public payable returns (uint memberId);
 
 function leaveDAO() public returns (bool);
 
+function kickMember(uint memberId) public returns (bool);
+
 function isMember() public view returns (bool);
 
 

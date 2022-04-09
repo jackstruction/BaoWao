@@ -24,14 +24,17 @@ event voteResult(address indexed voter, uint256 indexed voteId, uint256 indexed 
 // member voting functions
     function voteClassic(enum vote, uint ballotId) public returns(bool);
 
-    function voteMultiChoice(uint vote) public returns(bool);
+
+    function voteMultiChoice(uint vote, uint ballotId) public returns(bool);
 
 
     // this function will be how to create a new vote.
-    function startVote(uint ballotId) public view returns(enum vote);
+    function startVote(uint ballotId) public view returns(bool);
+
+    function startVoteTimed(uint ballotId, uint votingWindow) public view returns(bool);
 
     // this function will be how to end a new vote. probs time based, but I guess that can be instantiated in the module contract. probably a seconds based timer from the startvote function.
-    function endVote(uint ballotId) public view returns(enum vote);
+    function endVote(uint ballotId) public view returns(bool);
 
 
     // this function will be used to tally the vote, and do whatever the necessary actions are, be they contracts or just a simple function call.

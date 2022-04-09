@@ -7,9 +7,9 @@ contract Home {
 // This will be the base contract for the DAO 
 
 // This will need to orchestrate all other contracts and work through those contracts 
+ 
+// users will: 
 
-// Once the dao has been created, 
-// members will need to: 
 // 1. Mint a member token or become a member. We'll have 2 module contracts, mint NFT membership and  at-will membership, TIME PERMITTING DAO-voted membership. 
 
 // 2. Submit proposals to be voted on by the DAO, Vote on the proposal, Accept prop, reject prop. 

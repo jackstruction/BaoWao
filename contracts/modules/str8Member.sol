@@ -20,10 +20,7 @@ contract str8Member is IMember {
     // member removed
     // member updated
 
-
-
     // constructor
-
 
 // functions
     // interface (IMember) functions
@@ -32,10 +29,6 @@ contract str8Member is IMember {
         // update
 
     // internal functions
-
-    
-
-
 
 
 }

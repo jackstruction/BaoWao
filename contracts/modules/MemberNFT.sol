@@ -30,6 +30,7 @@ contract memberNFT is IERC721, IERC165 {
     address constant zeroAdd = 0x0000000000000000000000000000000000000000;
     address immutable DAO;
 
+    mapping (address => Member) members;
 
 // Constructor
 
@@ -37,8 +38,6 @@ contract memberNFT is IERC721, IERC165 {
         DAO = _orgAddress;
         shipCost = _membershipCost; // not a constant so that this can be modified, again only by DAO 
     }
-
-
 
 
     /**
